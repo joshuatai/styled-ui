@@ -20,7 +20,6 @@ after_success:
   - cp -af packages/styled-docs/docs packages/styled-docs/git-pages/
 deploy:
   provider: pages:git
-  repo: joshuatai/test
   token:
     secure: "fb399206bfda3dd9f8fb07e5a17afad82f5d9ae1"
   edge: true # dpl v2
