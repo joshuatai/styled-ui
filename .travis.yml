@@ -1,34 +1,31 @@
 language: node_js
 os:
-  - linux
+- linux
 node_js:
-  - '10'
-  - '12'
+- '10'
+- '12'
 cache:
   yarn: true
 before_install:
-  - npm install -g yarn
+- npm install -g yarn
 install:
-  - yarn install
-  - yarn test
-  # list installed react and react-dom packages
-  - yarn list --silent react react-dom
+- yarn install
+- yarn test
+- yarn list --silent react react-dom
 script:
-  - yarn build
-  - yarn eslint
-after_success: 
-  - cp -af packages/styled-docs/docs packages/styled-docs/git-pages/
+- yarn build
+- yarn eslint
+after_success:
+- cp -af packages/styled-docs/docs packages/styled-docs/git-pages/
 deploy:
   provider: pages:git
   token:
-    secure: "fb399206bfda3dd9f8fb07e5a17afad82f5d9ae1"
-  edge: true # dpl v2
+    secure: XWgIUW6q4usFDjM0WeQPA2j//dvhWXKGKuDOjJznOgLgcUnJPI8zdyKoNcycdYxp4RU1Sf5y5DVenBs9Wjp4zbT1V+M9smtPrVBUdEi0wjuwZEfWXF2vVUcD3Nqe9CmKS0SHm+IkhUN1jtZdD4nVAtpXtLJq/PuUzt1TuMUd5yAUlmvV2ylei5cTKdCAI6kvRluvZJXMhalTMeZP74I8+9m8U3+y+1xtEOxzvchaX8xwblB0gCglDy71fEXv6B+Ut8jSpiUv60gvq6w12TNpwSfzN8pZCe8LCZ2qT/7q955x0HbrFIf8thwvvNLNKwXm65Ccoljns1LPaM9e9Nern44Z4Fh1hooBqTxtT8Dm0Gqa8GwxWmcwAkNT10aEl4yUv5ilnkRSkYZ6eynWTQmHhFwd5icipyZMVw5w0DxPKbWEX250CV3bfzKPn8i79r1eiLU+FDCKrfDplTTSFt9CnY938u9FR8b8cR6Q2w3Vz5flZzyTmAivKXbBYcR/TCfkOZ5ApNDHsAuU4KEUXl0wqZ5SHs9envWKSCiHO0ndS+d2Xtj/v1FC9xvYjyCbnc2Z4IiCM3/e6n7dfZlg5cUgZQp+tgSoO5FAhV4kEaBmkKT6jusLx6zBJU0S/1WFik/8Z2t0HNluFzH9T/RnN9xsj2ioTMOEoxHz1gSuefgdak8=
+  edge: true
   keep_history: true
   target_branch: gh-pages
-  local_dir: "packages/styled-docs/git-pages"
+  local_dir: packages/styled-docs/git-pages
   on:
     branch: master
     node: '10'
-# notifications:
-#   slack:
-#     secure: dPF2omw9ykWqJ2C9kV8yq67zJVyezt58kmnRHavrq1+U1e5tDZootxoMjwMzq/T3pctghLbE4QYtg4s3GxINP5mMLMKLoUjDqsnFijKXB9jInWdbxFcDi0pY1w3KimEgSUWd5UZS6WWH23mPGO923KKhu3FE0jnISNlpV6/HQAiAgokMYEMC3Sx9V37iUQsnVBpshhEHMXbK6s9kp6H1gmmfPNuqnSJN0PQ9OaRKlUOlbFjgahFJdljG/TG1qeeGGxUzGu+r1tBmsfsjSqgWbcRDNfHpkx1PeelyhorsA6/CMBW82tVAGA5Z03nw0USrETG8vqPm/B6nnAa+vCvXaUxeft0R75Dczmx9FqGNygyrIwbtxjel5BQCYovVxjkHDniOhd7n0I7c97aXkaaJTvSV2CRSt7DmOPiNE+6mqBaEh9f7OfjsTA8/nShsaVQ5DQAuGfxsSjRTDuJY5NGjBgfIF/2nT2gS1cS/QQza6HcijaOWKTRCgT6/PC++oNTTy6FK1H7epYe41HmIYCDF/Urk1k+DlmCSbshdIGRg05anuTLqCPi6Tz7fFKNNzY4uuB6315vDgKOI91JTIM+5QBCgxjm09E2eIiEpZgIEicvjs1CKZIsfi9R1HgkWD+mngcJvYApwQ+qwvdV/L+zLUkWR9ifz3uFIFtssK30OWQ8=
+
